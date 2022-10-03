@@ -13,6 +13,7 @@ public enum UIID
     UICSetting = 3,
     UICFail = 4,
     UICVictory = 5,
+    UICGameInfo = 6,
 }
 
 

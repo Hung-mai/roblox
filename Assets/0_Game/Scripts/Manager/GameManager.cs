@@ -7,6 +7,7 @@ public enum GameState { MainMenu, GamePlay, Finish}
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     
+#region Systems
     private static GameState gameState = GameState.MainMenu;
     
     protected void Awake()
@@ -90,7 +91,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         DataManager.ins.SaveData();
 
         //yield return new WaitUntil
-
-        
     }
+#endregion
+
+#region Logic game
+    public List<Data_Minigame> listMinigames;
+    
+
+#endregion
 }
