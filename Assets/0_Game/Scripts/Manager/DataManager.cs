@@ -8,13 +8,10 @@ public class DataManager : MonoBehaviour
     public static DataManager ins;
     private void Awake()
     {
-        if (ins != null)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
         ins = this;
+        DontDestroyOnLoad(this.gameObject);
     }
+
     public bool isLoaded = false;
     public PlayerData playerData;
     public const string PLAYER_DATA = "PLAYER_DATA";
@@ -49,38 +46,4 @@ public class DataManager : MonoBehaviour
         string json = JsonUtility.ToJson(playerData);
         PlayerPrefs.SetString(PLAYER_DATA, json);
     }
-}
-
-
-[System.Serializable]
-public class PlayerData
-{
-    [Header("--------- Game Setting ---------")]
-    public bool isNew = true;
-    public bool isMusic = true;
-    public bool isSound = true;
-    public bool isVibrate = true;
-    public bool isNoAds = false;
-    public int starRate = -1;
-
-
-    [Header("--------- Game Params ---------")]
-    public int gold = 0;
-    public int cup = 0;
-    public int level = 0;//Level hiện tại
-    public int idSkin = 0; //Skin
-    
-
-    [Header("--------- Firebase ---------")]
-    public string timeInstall;//Thời điểm cài game
-    public int timeLastOpen;//Thời điểm cuối cùng mở game. Tính số ngày kể từ 1/1/1970
-    public int timeInstallforFirebase; //Dùng trong hàm bắn Firebase UserProperty. Số ngày tính từ ngày 1/1/1970
-    public int daysPlayed = 0;//Số ngày đã User có mở game lên
-    public int sessionCount = 0;//Tống số session
-    public int playTime = 0;//Tổng số lần nhấn play game
-    public int playTime_Session = 0;//Số lần nhấn play game trong 1 session
-    public int dieCount_levelCur = 0;//Số lần chết tại level hiện tại
-    public int firstDayLevelPlayed = 0;  //Số level đã chơi ở ngày đầu tiên
-
-    //--------- Others ---------
 }

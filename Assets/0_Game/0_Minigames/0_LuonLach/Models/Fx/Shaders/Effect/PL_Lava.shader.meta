@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: cf642ea58a59b0c40a363726ec0a0fde
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _lava_tx: {fileID: 2800000, guid: 792d9ca0c9ae1654d9c7a0c41e042f02, type: 3}
+  - _Texture0: {fileID: 2800000, guid: beea0694d337e23449c7d21e4dfef1cb, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -404,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI_ID: 5
   IsDestroyOnClose: 0
+  m_RectTransform: {fileID: 8070103426510838464}
   text: {fileID: 8825234939402806182}
 --- !u!1 &8070103427282756267
 GameObject:

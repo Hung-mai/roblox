@@ -10,7 +10,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 #region Systems
     private static GameState gameState = GameState.MainMenu;
     
-    protected void Awake()
+    protected void OnEnable()
     {
         Input.multiTouchEnabled = false;
         Application.targetFrameRate = 60;
@@ -48,6 +48,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             && SoundManager.ins != null
         );
 
+        
         //SoundManager.PlayMusicBg(SoundManager.ins.bgMusic);
 
         LoadingScreen.ins.SetPercent(0.35f, 1f);
@@ -74,13 +75,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         // yield return new WaitUntil(() => GameManager.ins.data.charUsed != CharacterType.None);
 
+        LoadingScreen.ins.SetPercent(1f, 1f);
         yield return Cache.GetWFS(1f);
 
         var sync = SceneManager.LoadSceneAsync("Home");
 
         yield return new WaitUntil(() => sync.isDone);
+        UIManager.ins.OpenUI(UIID.UICMainMenu);
 
-        LoadingScreen.ins.SetPercent(1f, 0.5f);
 
         // yield return new WaitUntil(() =>
         //     PlayerController.ins != null
@@ -96,7 +98,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
 #region Logic game
     public List<Data_Minigame> listMinigames;
-    
+    public Data_Minigame currentMinigame;
+    public string currentPathScene;
 
 #endregion
 }

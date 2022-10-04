@@ -8,7 +8,7 @@ public class UICanvas : MonoBehaviour
     public UIID UI_ID;
     public bool IsDestroyOnClose = false;
 
-    protected RectTransform m_RectTransform;
+    public RectTransform m_RectTransform;
     private Animator m_Animator;
     private bool m_IsInit = false;
     private float m_OffsetY = 0;
@@ -20,7 +20,7 @@ public class UICanvas : MonoBehaviour
 
     protected void Init()
     {
-        m_RectTransform = GetComponent<RectTransform>();
+        //m_RectTransform = GetComponent<RectTransform>();
         //m_Animator = GetComponent<Animator>();
 
         //float ratio = (float)Screen.height / (float)Screen.width;

@@ -10,4 +10,7 @@ public class Data_Minigame : ScriptableObject
     public Sprite minigameImage;
     public string gameName;
     public string description;
+    public string urlAssetBundle;
+    public int version = 0;
+    public ScreenOrientation creenOrientationGame;
 }

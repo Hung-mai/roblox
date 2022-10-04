@@ -19,6 +19,7 @@ public class CanvasMainMenu : UICanvas
         {
             Minigame_card card = Instantiate(minigameCard_Prefab, contentTransform);
             card.SetGameImage(GameManager.ins.listMinigames[i].minigameImage);
+            card.data_Minigame = GameManager.ins.listMinigames[i];
         }
     }
 

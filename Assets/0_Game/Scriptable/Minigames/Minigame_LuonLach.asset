@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Minigame_LuonLach
   m_EditorClassIdentifier: 
   minigameID: 0
-  minigameImage: {fileID: 21300000, guid: 44a054df1702e39458b7072b08d0f212, type: 3}
+  minigameImage: {fileID: 21300000, guid: 5d5ca89bc2a98ea47980e38ae990676d, type: 3}
   gameName: Fill In Blank
   description: Run into the right place
+  urlAssetBundle: 
+  version: 0
+  creenOrientationGame: 1
